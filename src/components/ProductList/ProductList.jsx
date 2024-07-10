@@ -58,14 +58,14 @@ const ProductList = () => {
       },
       body: JSON.stringify(data),
     });
-  }, [addedItems]);
+  }, [addedItems, queryId]);
 
   useEffect(() => {
     tg.WebApp.onEvent('mainButtonClicked', onSendData);
     return () => {
       tg.WebApp.offEvent('mainButtonClicked', onSendData);
     };
-  }, []);
+  }, [tg.WebApp, onSendData]);
 
   return (
     <div className={'list'}>

@@ -15,14 +15,14 @@ const Form = () => {
       select,
     };
     tg.sendData(JSON.stringify(data));
-  }, [country, select, street]);
+  }, [country, select, street, tg]);
 
   useEffect(() => {
     tg.WebApp.onEvent('mainButtonClicked', onSendData);
     return () => {
       tg.WebApp.offEvent('mainButtonClicked', onSendData);
     };
-  }, []);
+  }, [onSendData, tg.WebApp]);
 
   useEffect(() => {
     tg.MainButton.setParams({
@@ -36,7 +36,7 @@ const Form = () => {
     } else {
       tg.MainButton.show();
     }
-  }, [country, street]);
+  }, [country, street, tg.MainButton]);
 
   return (
     <div className="form">
