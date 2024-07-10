@@ -16,11 +16,12 @@ function App() {
 
   return (
     <div>
-      <Header />
+      {/* <Header />
       <Routes>
         <Route index element={<ProductList />} />
         <Route path='form' element={<Form />} />
-      </Routes>
+      </Routes> */}
+      nothing
     </div>
   );
 }
